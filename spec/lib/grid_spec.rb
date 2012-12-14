@@ -3,7 +3,7 @@ require 'grid'
 
 describe Grid do
 
-	it "should have 9 boxes" do 
+	it "should have normal grid size" do 
 		@grid = Grid.new
 		@grid.size.should == 9
 		end
