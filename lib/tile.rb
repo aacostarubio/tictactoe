@@ -1,15 +1,19 @@
 class Tile
-	attr_accessor :symbol
+  attr_accessor :symbol
 
-	def empty?
-	 	symbol.nil? || symbol == ""
-	end 
+  def initialize
+  	@symbol = ""
+  end
 
-	def x?
-		symbol == "x"
-	end
+  def empty?
+    @symbol.nil? || @symbol == ""
+  end 
 
-	def o?
-		symbol == "o"
-	end
+  def x?
+    @symbol == "x"
+  end
+
+  def o?
+	  @symbol == "o"
+  end
 end
