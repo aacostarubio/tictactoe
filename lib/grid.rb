@@ -22,19 +22,17 @@ class Grid
   	@tiles.select {|tile|  not tile.empty?}
   end
 
-  def display_to_user
-  	(0..2).each do |number|
-      print @tiles[number].symbol + "|" 
-  	end
-  	puts
-  	(3..5).each do |number|
-      print @tiles[number].symbol + "|" 
-  	end 
-  	puts
-  	(6..8).each do |number|
-      print @tiles[number].symbol + "|" 
-  	end
-  	puts 
-  	puts 	
+  def formatted
+    symbols = @tiles.map{|tile| tile.symbol}
+    trailers = [" |", " |", " \n", " |", " |", " \n", " |", " |", " \n"]
+    s = ""
+    (0..8).each {|i| s = s + symbols[i] + trailers[i]}
+    return s
   end
+
+  def display_to_user
+    print formatted
+    puts
+  end
+
 end

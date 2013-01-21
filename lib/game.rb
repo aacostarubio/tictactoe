@@ -17,11 +17,11 @@ class Game
   	tile = @second_player.get_next_tile
   	@grid.move(@second_player.symbol, tile)
   end
-	
-	def play(with_ui=false)
-		first_move
-		@grid.display_to_user if with_ui
+
+  def play(with_ui=false)
+  	first_move
+  	@grid.display_to_user if with_ui
     next_move
     @grid.display_to_user if with_ui
-	end
+  end
 end

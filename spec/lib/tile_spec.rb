@@ -2,6 +2,7 @@ require 'spec_helper'
 require 'tile'
 
 describe Tile do
+
 	it "should be an empty box" do
 			@tile = Tile.new
 			@tile.should be_empty
@@ -12,5 +13,8 @@ describe Tile do
 		@tile.symbol = 'x'
 		@tile.should be_x
 	end
+
 end
+
+
 
