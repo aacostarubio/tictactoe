@@ -24,4 +24,5 @@ describe Game do
 	  @current_game = Game.new
     @current_game.grid.occupied.size.should == 2
 	end
+
 end
