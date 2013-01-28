@@ -19,7 +19,7 @@ class Grid
   end
 
   def occupied
-  	@tiles.select {|tile|  not tile.empty?}
+  	@tiles.select {|tile| not tile.empty?}
   end
 
   def formatted

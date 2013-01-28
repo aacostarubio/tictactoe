@@ -15,13 +15,21 @@ class Game
 
   def next_move
   	tile = @second_player.get_next_tile
-  	@grid.move(@second_player.symbol, tile)
+  	@grid.move(@second_player.symbol, 2)
+  end
+
+  def moves
+    boom = rand(0..8)
+    @grid.move(@first_player.symbol, boom)
+    @grid.move(@second_player.symbol, boom)
   end
 
   def play(with_ui=false)
-  	first_move
+    first_move
   	@grid.display_to_user if with_ui
     next_move
+    @grid.display_to_user if with_ui
+    moves
     @grid.display_to_user if with_ui
   end
 end

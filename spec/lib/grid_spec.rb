@@ -7,7 +7,7 @@ describe Grid do
 		@grid = Grid.new
 	end
 
-  it "should have normal grid size and no" do 
+  it "should have normal grid size" do 
 		@grid.size.should == 9
   end
 
@@ -31,9 +31,9 @@ describe Grid do
   	@grid.move("x", 1).should == "Can't move to an occupied tile"
   end
 
-  it "should format grid" do
+  it "should have a formatted grid" do
     @grid.move("x", 0)
     @grid.formatted.should == "x | | \n | | \n | | \n"
   end
-	
+
 end

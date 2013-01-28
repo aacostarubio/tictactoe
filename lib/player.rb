@@ -1,4 +1,6 @@
 class Player
+	attr_accessor :tiles
+
 	def initialize(symbol)
 		@symbol = symbol
 	end
@@ -8,6 +10,6 @@ class Player
 	end
 
 	def get_next_tile
-		1
+		rand(0..8)
 	end
 end
