@@ -23,7 +23,7 @@ describe Grid do
   end 
 
   it "should allow a move to an unoccupied tile" do
-  	@grid.move("x", 1).should == "OK"
+  	@grid.move("x" , 1).should == "OK"
   end
 
   it "should not allow a move to an occupied tile" do

@@ -6,30 +6,20 @@ class Game
     @grid = Grid.new 9
     @first_player = Player.new("x")
     @second_player = Player.new("o")
-    play(with_ui)
   end
 
-  def first_move
-  	@grid.move(@first_player.symbol, 0)
+  def machine_move(tile_number)
+    @grid.move(@first_player.symbol, tile_number)
   end
 
-  def next_move
-  	tile = @second_player.get_next_tile
-  	@grid.move(@second_player.symbol, 2)
+  def human_move(tile_number)
+    if @grid.occupied.count.odd?
+      @grid.move(@second_player.symbol, tile_number)
+    end
   end
 
-  def moves
-    boom = rand(0..8)
-    @grid.move(@first_player.symbol, boom)
-    @grid.move(@second_player.symbol, boom)
+  def winner
+    
   end
 
-  def play(with_ui=false)
-    first_move
-  	@grid.display_to_user if with_ui
-    next_move
-    @grid.display_to_user if with_ui
-    moves
-    @grid.display_to_user if with_ui
-  end
 end

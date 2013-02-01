@@ -22,6 +22,10 @@ class Grid
   	@tiles.select {|tile| not tile.empty?}
   end
 
+  def unoccupied
+    @tiles.select {|tile| tile.empty?}    
+  end
+
   def formatted
     symbols = @tiles.map{|tile| tile.symbol}
     trailers = [" |", " |", " \n", " |", " |", " \n", " |", " |", " \n"]
