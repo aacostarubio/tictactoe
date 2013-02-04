@@ -1,5 +1,4 @@
-require 'spec_helper'
-require 'tile'
+require_relative '../spec_helper'
 
 describe Tile do
 	before do

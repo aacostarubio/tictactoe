@@ -1,6 +1,4 @@
-require 'spec_helper'
-require 'grid'
-require 'game'
+require_relative '../spec_helper'
 
 describe Game do 
 
@@ -40,17 +38,6 @@ describe Game do
 		puts @current_game.grid.tiles.first.inspect
 		@current_game.grid.tiles.first.symbol.should == "x"
 		@current_game.grid.tiles.last.symbol.should == "o"
-	end
-
-	it 'know if machine wins' do
-		@current_game.machine_move(0)
-		@current_game.human_move(3)
-		@current_game.machine_move(1)
-		@current_game.human_move(5)
-		@current_game.machine_move(2)
-		@current_game.grid.occupied.should == ''
-		@current_game.grid.occupied.size.should == 5
-		@current_game.winner.should == @current_game.first_player.symbol
 	end
 
 end
