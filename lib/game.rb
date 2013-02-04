@@ -2,7 +2,7 @@ class Game
   attr_accessor :grid
   attr_reader :first_player, :second_player
 
-  def initialize(with_ui=false)
+  def initialize
     @grid = Grid.new 9
     @first_player = Player.new("x")
     @second_player = Player.new("o")

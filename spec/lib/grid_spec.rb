@@ -44,9 +44,9 @@ describe Grid do
     end
 
     it 'is NOT a winning game when first row is filled with the same symbol' do
-      @grid.move("x", 6)                
-      @grid.move("o", 7)
-      @grid.move("x", 8)      
+      @grid.move("x", 0)                
+      @grid.move("o", 1)
+      @grid.move("x", 2)      
       @grid.should_not be_horizontal_win
     end    
 
