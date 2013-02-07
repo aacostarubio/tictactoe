@@ -8,8 +8,4 @@ class Player
 	def symbol
 		@symbol
 	end
-
-	def get_next_tile
-		rand(0..8)
-	end
 end

@@ -39,7 +39,7 @@ describe Grid do
     it 'is winning game when first row is filled with the same symbol' do
       @grid.move("x", 0)                
       @grid.move("x", 1)
-      @grid.move("x", 2)      
+      @grid.move("x", 2)     
       @grid.should be_horizontal_win
     end
 
@@ -76,7 +76,13 @@ describe Grid do
       @grid.move("x", 7)
       @grid.move("x", 8)
       @grid.should_not be_horizontal_win
-    end    
+    end  
+
+    it 'should indicate a win for o if theres a row filled with os' do
+      @grid.move("o", 0)
+      @grid.move("o", 1)
+      @grid.move("o", 2)
+    end  
 
   end
 

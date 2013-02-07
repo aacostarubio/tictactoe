@@ -40,4 +40,5 @@ describe Game do
 		@current_game.grid.tiles.last.symbol.should == "o"
 	end
 
+
 end

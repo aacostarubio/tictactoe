@@ -1,4 +1,4 @@
-class Grid
+  class Grid
   attr_accessor :tiles
 
   def initialize(size=9)
@@ -73,7 +73,21 @@ class Grid
   end
 
   def draw?
-    all_tiles_played? && !horizontal_win? && !vertical_win? && !diagonal_win?
+    (all_tiles_played? && !horizontal_win? && !vertical_win? && !diagonal_win?)
+  end
+
+  def game_over?
+    if horizontal_win?
+      return true
+    elsif vertical_win?
+      return true
+    elsif diagonal_win?
+      return true
+    elsif draw?
+      return true
+    else
+      false
+    end
   end
 
 

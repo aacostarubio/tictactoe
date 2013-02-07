@@ -18,4 +18,13 @@ class Game
     end
   end
 
+  def moves
+    while @grid.game_over? == false
+      machine_move(rand(0..8))
+      @grid.display_to_user
+      human_move(rand(0..8))
+      @grid.display_to_user
+    end
+  end
+
 end

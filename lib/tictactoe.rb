@@ -4,18 +4,16 @@ require_relative 'tile'
 require_relative 'player'
 
 game = Game.new
-game.machine_move(1)
-game.grid.display_to_user
-game.human_move(3)
-game.grid.display_to_user
-game.machine_move(0)
-game.grid.display_to_user
-game.human_move(4)
-game.grid.display_to_user
-game.machine_move(2)
+game.moves
 game.grid.display_to_user
 
-if game.grid.horizontal_win?
-	puts "You won X"
-end
+	if game.grid.horizontal_win?
+		print 'you won horizontal sir'
+	elsif game.grid.vertical_win?
+		print "You won vertically good sir"
+	elsif game.grid.diagonal_win?
+		print "You won diagonally awesome Mr. Person"
+	elsif game.grid.draw? && game.grid.game_over?
+		print "game is a DRAW! Stand BACK!!!"
+	end
 
