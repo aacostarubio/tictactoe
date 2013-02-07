@@ -1,3 +1,5 @@
+require "color_text"
+
 require_relative 'game'
 require_relative 'grid'
 require_relative 'tile'

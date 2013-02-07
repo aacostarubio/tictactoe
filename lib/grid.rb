@@ -34,24 +34,25 @@
     s
   end
 
+
   def horizontal_win?
-    if (@tiles[0].symbol == "x" && @tiles[1].symbol == "x" && @tiles[2].symbol == "x")
+    if (@tiles[0].symbol == "x" && @tiles[1].symbol == "x" && @tiles[2].symbol == "x") || (@tiles[0].symbol == "o" && @tiles[1].symbol == "o" && @tiles[2].symbol == "o")
       true
-    elsif (@tiles[3].symbol == "x" && @tiles[4].symbol == "x" && @tiles[5].symbol == "x")
+    elsif (@tiles[3].symbol == "x" && @tiles[4].symbol == "x" && @tiles[5].symbol == "x") || (@tiles[3].symbol == "o" && @tiles[4].symbol == "o" && @tiles[5].symbol == "o")
       true
-    elsif (@tiles[6].symbol == "x" && @tiles[7].symbol == "x" && @tiles[8].symbol == "x")
-      true
+    elsif (@tiles[6].symbol == "x" && @tiles[7].symbol == "x" && @tiles[8].symbol == "x") || (@tiles[6].symbol == "o" && @tiles[7].symbol == "o" && @tiles[8].symbol == "o")
+      true     
     else
       return false
     end
   end
 
   def vertical_win?
-    if (@tiles[0].symbol == "x" && @tiles[3].symbol == "x" && @tiles[6].symbol == "x")
+    if (@tiles[0].symbol == "x" && @tiles[3].symbol == "x" && @tiles[6].symbol == "x") || (@tiles[0].symbol == "o" && @tiles[3].symbol == "o" && @tiles[6].symbol == "o")
       true
-    elsif (@tiles[1].symbol == "x" && @tiles[4].symbol == "x" && @tiles[7].symbol == "x")
+    elsif (@tiles[1].symbol == "x" && @tiles[4].symbol == "x" && @tiles[7].symbol == "x") || (@tiles[1].symbol == "o" && @tiles[4].symbol == "o" && @tiles[7].symbol == "o")
       true
-    elsif (@tiles[2].symbol == "x" && @tiles[5].symbol == "x" && @tiles[8].symbol == "x")
+    elsif (@tiles[2].symbol == "x" && @tiles[5].symbol == "x" && @tiles[8].symbol == "x") || (@tiles[2].symbol == "o" && @tiles[5].symbol == "o" && @tiles[8].symbol == "o")
       true      
     else
       false
@@ -59,9 +60,9 @@
   end
 
   def diagonal_win?
-    if (@tiles[0].symbol == "x" && @tiles[4].symbol == "x" && @tiles[8].symbol == "x")
+    if (@tiles[0].symbol == "x" && @tiles[4].symbol == "x" && @tiles[8].symbol == "x") || (@tiles[0].symbol == "o" && @tiles[4].symbol == "o" && @tiles[8].symbol == "o")
       true
-    elsif (@tiles[2].symbol == "x" && @tiles[4].symbol == "x" && @tiles[6].symbol == "x")
+    elsif (@tiles[2].symbol == "x" && @tiles[4].symbol == "x" && @tiles[6].symbol == "x") || (@tiles[2].symbol == "o" && @tiles[4].symbol == "o" && @tiles[6].symbol == "o")
       true
     else
       false

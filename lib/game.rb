@@ -9,7 +9,9 @@ class Game
   end
 
   def machine_move(tile_number)
-    @grid.move(@first_player.symbol, tile_number)
+    if @grid.occupied.count.even?
+      @grid.move(@first_player.symbol, tile_number)
+    end
   end
 
   def human_move(tile_number)
@@ -20,10 +22,10 @@ class Game
 
   def moves
     while @grid.game_over? == false
-      machine_move(rand(0..8))
-      @grid.display_to_user
       human_move(rand(0..8))
-      @grid.display_to_user
+      # @grid.display_to_user      
+      machine_move(rand(0..8))
+      # @grid.display_to_user
     end
   end
 

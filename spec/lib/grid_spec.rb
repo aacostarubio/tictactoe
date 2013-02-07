@@ -123,13 +123,19 @@ describe Grid do
       @grid.should be_vertical_win
     end
 
+    it 'is a win if there are the same symbols in the third column' do
+      @grid.move("o", 2)
+      @grid.move("o", 5)
+      @grid.move("o", 8)
+      @grid.should be_vertical_win
+    end    
+
     it 'is NOT a win if there is an o in the middle of the third column' do
       @grid.move("x", 2)
       @grid.move("x", 5)
       @grid.move("o", 8)
       @grid.should_not be_vertical_win
     end
-
   end
 
   describe 'diagonal win' do
@@ -155,13 +161,19 @@ describe Grid do
       @grid.should be_diagonal_win
     end
 
+    it 'should indicate a win if there are the same symbols in the left diagonal column' do
+      @grid.move("o", 2)
+      @grid.move("o", 4)
+      @grid.move("o", 6)
+      @grid.should be_diagonal_win
+    end
+
     it 'should NOT indicate a win if there is an o any place in the column' do
       @grid.move("x", 2)
       @grid.move("o", 4)
       @grid.move("x", 6)
       @grid.should_not be_diagonal_win
     end        
-
   end
 
   context 'a draw of the game' do
@@ -178,7 +190,29 @@ describe Grid do
       @grid.move("x", 8)
       @grid.should be_draw
     end
+  end
 
+  context 'end the game' do
+
+    it 'should end the game when there is a win' do
+      @grid.move("x", 2)
+      @grid.move("x", 4)
+      @grid.move("x", 6)
+      @grid.should be_game_over
+    end
+
+    it 'should indicate a draw if all the boxes are filled with no match' do
+      @grid.move("x", 0)
+      @grid.move("o", 1)
+      @grid.move("x", 2)
+      @grid.move("x", 3)
+      @grid.move("o", 4)
+      @grid.move("o", 5)
+      @grid.move("o", 6)
+      @grid.move("x", 7)
+      @grid.move("x", 8)
+      @grid.should be_game_over
+    end
   end
 
 
