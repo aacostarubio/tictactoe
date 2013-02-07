@@ -35,7 +35,6 @@ describe Game do
 	it 'x and o are being played' do
 		@current_game.machine_move(0)
 		@current_game.human_move(8)
-		puts @current_game.grid.tiles.first.inspect
 		@current_game.grid.tiles.first.symbol.should == "x"
 		@current_game.grid.tiles.last.symbol.should == "o"
 	end
