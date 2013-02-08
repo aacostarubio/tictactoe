@@ -1,13 +1,7 @@
-require "color_text"
-
-require_relative 'game'
-require_relative 'grid'
-require_relative 'tile'
-require_relative 'player'
+require_relative 'require_game'
 
 game = Game.new
 game.moves
-game.grid.display_to_user
 
 	if game.grid.horizontal_win?
 		print 'you won horizontal sir'

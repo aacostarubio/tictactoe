@@ -4,6 +4,7 @@ describe Game do
 
 	before do
 		@current_game = Game.new
+		@current_game.user_interface_game = false
 	end
 
 	it 'should display default grid' do
@@ -39,5 +40,13 @@ describe Game do
 		@current_game.grid.tiles.last.symbol.should == "o"
 	end
 
+	it 'should default to a ui game' do
+		@current_game = Game.new
+		@current_game.user_interface_game.should be_true
+	end
+
+	it 'should allow a game with no ui for testing' do
+		@current_game.user_interface_game.should be_false
+	end
 
 end
