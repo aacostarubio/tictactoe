@@ -21,12 +21,12 @@ describe Grid do
   end 
 
   it "should allow a move to an unoccupied tile" do
-  	@grid.move("x" , 1).should == "OK"
+  	@grid.move("x" , 1).should == "x"
   end
 
   it "should not allow a move to an occupied tile" do
   	@grid.move("x", 1)
-  	@grid.move("x", 1).should == "Can't move to an occupied tile"
+    expect{@grid.move("o", 1)}.to raise_error(OccupiedError)
   end
 
   it "should have a formatted grid" do

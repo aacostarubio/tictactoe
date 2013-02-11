@@ -1,4 +1,3 @@
-
 class Game
   attr_accessor :grid, :user_interface_game
   attr_reader :first_player, :second_player
@@ -10,10 +9,8 @@ class Game
     @user_interface_game = true
   end
 
-  def machine_move(tile_number)
-    if @grid.occupied.count.even?
-      @grid.move(@first_player.symbol, tile_number)
-    end
+  def machine_move
+    @grid.move(@first_player.symbol, @grid.first_unoccupied_tile_number)
   end
 
   def human_move(tile_number=-1)
@@ -21,21 +18,23 @@ class Game
       puts "Please enter you move: "
       tile_number = gets.chomp.to_i
     end
-    if @grid.occupied.count.odd? && tile_number != -1
+    begin
       @grid.move(@second_player.symbol, tile_number)
-    end
+    rescue OccupiedError
+      puts "Occupied tile Dude, pick another one"
+    end        
   end
 
   def moves
-    while @grid.game_over? == false
-      machine_move(rand(0..8))
-      @grid.display_to_user
-      if @user_interface_game
-        human_move
-      else
-        human_move(rand(0..8))   
+    while @grid.game_over? == false && user_interface_game
+      if @grid.unoccupied.count.odd?
+        machine_move
+        @grid.display_to_user 
       end
-      @grid.display_to_user
+      if @grid.unoccupied.count.even?
+        human_move
+        @grid.display_to_user
+      end      
     end
   end
 

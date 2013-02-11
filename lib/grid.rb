@@ -13,9 +13,8 @@
   end
 
   def move(symbol, position)
-  	return "Can't move to an occupied tile" unless @tiles[position].symbol.empty?
+    raise OccupiedError unless @tiles[position].empty?
     @tiles[position].symbol = symbol
-    'OK'
   end
 
   def occupied
@@ -24,6 +23,12 @@
 
   def unoccupied
     @tiles.select {|tile| tile.empty?}    
+  end
+
+  def first_unoccupied_tile_number
+    @tiles.each_with_index do |tile, index|
+      return index if tile.empty?
+    end
   end
 
   def formatted
@@ -91,10 +96,15 @@
     end
   end
 
-
   def display_to_user
     print formatted
     puts
   end
 
+end
+
+class OccupiedError < Exception
+  def message
+    "nop buddy"
+  end
 end
