@@ -7,18 +7,19 @@ describe Game do
 		@current_game.user_interface_game = false
 	end
 
-	it 'should display default grid' do
-		@current_game.grid.size.should == 9
-	end
+	it 'should display default grid' do 
+		@current_game.grid.size.should == 9 
+	end 
 
-	it 'should have an x player and an o player' do
-    @current_game.first_player.symbol.should == "x"		
-    @current_game.second_player.symbol.should == "o"		
-	end
+	it 'should have an x player and an o player' do 
+		@current_game.first_player.symbol.should == "x"	
+		@current_game.second_player.symbol.should == "o"		
+	end 
 
-	it 'should start with a move by x (the computer player)' do
-		@current_game.machine_move
-    @current_game.grid.occupied.size.should == 1
+
+	it 'should start with a move by x (the computer player)' do 
+		@current_game.machine_move 
+		@current_game.grid.occupied.size.should == 1
     @current_game.grid.unoccupied.size.should == 8
 	end
 
