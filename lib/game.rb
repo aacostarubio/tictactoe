@@ -22,7 +22,7 @@ class Game
       @grid.move(@second_player.symbol, tile_number)
     rescue OccupiedError
       puts "Occupied tile Dude, pick another one"
-    end        
+    end
   end
 
   def moves
